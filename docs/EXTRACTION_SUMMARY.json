@@ -1,0 +1,6 @@
+{
+  "edition": "public-portfolio",
+  "evidence": "source reviewed at export; demos and tests use fictional data",
+  "extracted_module_count": 13,
+  "extracted_test_count": 6
+}
