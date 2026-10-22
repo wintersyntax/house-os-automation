@@ -107,10 +107,22 @@ flowchart TB
 | **Signed Slack ingress** | HMAC verification, scope filters, durable-enqueue contract | Mock-tested |
 | **Cloud Tasks → Firestore → Slack worker** | Stable identity, create-only reply claim, read-only answers | Mock-tested end to end; a limited private test-channel worker and the manual-only shopping path were owner-observed, not general household operation |
 | **OpenRouter draft adapter** | Bounded, opt-in wording assistance | Mock-tested only; disabled in demos, never authoritative |
-| **Cleaning automation** | Not part of the public extraction | Separate owner-verified Trello/Make workflow in the private system |
+| **Cleaning automation and Guardian** | Not included in the public extraction | Private test-card Guardian and one protected business cycle separately verified 21–22 October; Make v3 OFF, no normal household rollout |
 | **Receipt OCR, Trello writes, physical sensors** | Not implemented in this edition | Research or planned work only |
 
 **Dated private integration evidence (16 October 2026):** the owner observed an approved worker-image rollout and a real Husbot reply showing an incomplete, manually added shopping item with `HANDLELISTE` provenance. The source also combines inventory `KJØP` signals with manual checklist entries and groups matching names, but **mixed-source deduplication has fixture/mock coverage only**, not a separately witnessed mixed live run. The public demo remains entirely offline and is not connected to that private environment.
+
+### Private engineering milestones — 17–22 October 2026
+
+The private project advanced read-only shopping reconciliation,
+immutable assignment/Action evidence, transactional outbox protections,
+guarded Cleaning corrections and fail-closed business recovery. Selected
+attended tests verified one restricted Guardian flow and one protected
+Cleaning business cycle, not recurring household automation.
+
+These private modules are **not exported** into this public edition.
+Its existing source, fictional data and offline demonstrations are unchanged.
+See the dated [changelog](CHANGELOG.md) for details.
 
 For precise distinctions between source tests, owner-observed live evidence, and future plans, see [Implementation status](docs/IMPLEMENTATION_STATUS.md).
 
