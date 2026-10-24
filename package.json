@@ -1,0 +1,19 @@
+{
+  "name": "house-os-automation",
+  "private": true,
+  "type": "module",
+  "description": "Household coordination and automation for chores, groceries, inventory and everyday routines",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "check:release": "python3 scripts/check_public_release.py .",
+    "check": "npm run check:release && npm test && npm run demo:check",
+    "demo:brief": "node scripts/preview-daily-brief.mjs beforePurchase",
+    "demo:after": "node scripts/preview-daily-brief.mjs afterPurchase",
+    "demo:husbot": "node demos/husbot-simulation.mjs",
+    "demo:failures": "node demos/failure-modes.mjs",
+    "demo:check": "node demos/husbot-simulation.mjs --verify && node demos/failure-modes.mjs --verify"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
