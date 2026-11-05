@@ -1,0 +1,19 @@
+name: Portfolio CI
+on:
+  push:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify source, tests, and synthetic demos
+        run: npm run check
+      - name: Audit published history and commit identity
+        run: npm run check:history

@@ -1,0 +1,559 @@
+{
+  "schemaVersion": "1.1.0",
+  "kind": "SYNTHETIC_DEMO",
+  "title": "House OS - Connected Household Scenario (Cambi Portfolio)",
+  "disclaimer": "All people, prices, stock counts, purchases, vouchers and incidents are fictional. This fixture is not a record of live Trello/Make transactions.",
+  "timeZone": "Europe/Oslo",
+  "currency": "NOK",
+  "identityPolicy": "Resident and entity IDs are invented local fixture keys, never real Trello, Slack, Make or resident identifiers.",
+  "implementationStatus": {
+    "cleaningAutomation": "LIVE_VERIFIED_SEPARATELY; this dataset itself is synthetic",
+    "inventoryToShopping": "LIMITED_BUTLER_RULE_VERIFIED_SEPARATELY; fixture still synthetic and no complete shopping-expenses-restock automation",
+    "shoppingToExpenses": "SYNTHETIC_DEMO_NOT_AUTOMATED",
+    "pantTransition": "SYNTHETIC_DEMO_NOT_AUTOMATED",
+    "homeAndAway": "SYNTHETIC_DEMO_NOT_AUTOMATED",
+    "husbotDailyBrief": "DETERMINISTIC_FACTS_AND_NORWEGIAN_FALLBACK_TESTED_WITH_FIXTURES; inventory-only live Trello GET and one cloud execution VERIFIED_SEPARATELY; full live facts, optional AI and Slack PLANNED"
+  },
+  "residents": [
+    {
+      "id": "resident-nora",
+      "name": "Nora"
+    },
+    {
+      "id": "resident-oliver",
+      "name": "Oliver"
+    },
+    {
+      "id": "resident-mia",
+      "name": "Mia"
+    },
+    {
+      "id": "resident-leo",
+      "name": "Leo"
+    },
+    {
+      "id": "resident-amina",
+      "name": "Amina"
+    },
+    {
+      "id": "resident-erik",
+      "name": "Erik"
+    }
+  ],
+  "snapshots": {
+    "beforePurchase": {
+      "capturedAt": "2026-10-14T08:00:00+02:00",
+      "phase": "before_purchase",
+      "chores": [
+        {
+          "id": "chore-kitchen",
+          "name": "Kjøkken",
+          "effortPoints": 5,
+          "frequencyDays": 7,
+          "assignedResidentId": "resident-nora",
+          "dueDate": "2026-10-14",
+          "status": "open"
+        },
+        {
+          "id": "chore-bathroom-1",
+          "name": "Bad 1",
+          "effortPoints": 4,
+          "frequencyDays": 7,
+          "assignedResidentId": "resident-oliver",
+          "dueDate": "2026-10-15",
+          "status": "open"
+        },
+        {
+          "id": "chore-bathroom-2",
+          "name": "Bad 2",
+          "effortPoints": 3,
+          "frequencyDays": 10,
+          "assignedResidentId": "resident-mia",
+          "dueDate": "2026-10-18",
+          "status": "open"
+        },
+        {
+          "id": "chore-wc",
+          "name": "WC",
+          "effortPoints": 3,
+          "frequencyDays": 7,
+          "assignedResidentId": "resident-leo",
+          "dueDate": "2026-10-16",
+          "status": "open"
+        },
+        {
+          "id": "chore-living-dining",
+          "name": "Stue + Spisestue",
+          "effortPoints": 2,
+          "frequencyDays": 14,
+          "assignedResidentId": "resident-amina",
+          "dueDate": "2026-10-20",
+          "status": "open"
+        },
+        {
+          "id": "chore-hallway",
+          "name": "Gang",
+          "effortPoints": 1,
+          "frequencyDays": 21,
+          "assignedResidentId": "resident-erik",
+          "dueDate": "2026-11-04",
+          "status": "open"
+        }
+      ],
+      "away": [
+        {
+          "residentId": "resident-oliver",
+          "status": "Borte",
+          "awayThroughDateInclusive": "2026-10-18"
+        }
+      ],
+      "homeIssues": [
+        {
+          "id": "issue-kitchen-sink-leak",
+          "name": "Lekkasjen under kjøkkenvasken",
+          "boardList": "HJEM",
+          "status": "Pågår",
+          "priority": "Haster",
+          "ownerResidentId": "resident-erik"
+        }
+      ],
+      "inventory": [
+        {
+          "id": "inv-dishwasher-tablets",
+          "name": "Oppvasktabletter",
+          "status": "Kjøp",
+          "quantity": {
+            "value": 7,
+            "unit": "tablets",
+            "approximate": false,
+            "display": "7 tablets"
+          }
+        },
+        {
+          "id": "inv-hand-soap",
+          "name": "Håndsåpe",
+          "status": "Kjøp",
+          "quantity": {
+            "value": 0.1,
+            "unit": "bottles",
+            "approximate": true,
+            "display": "approximately 10% of a bottle"
+          }
+        },
+        {
+          "id": "inv-toilet-paper",
+          "name": "Toalettpapir",
+          "status": "Kjøp",
+          "quantity": {
+            "value": 3,
+            "unit": "rolls",
+            "approximate": false,
+            "display": "3 rolls"
+          }
+        },
+        {
+          "id": "inv-trash-bags",
+          "name": "Søppelposer",
+          "status": "Kjøp",
+          "quantity": {
+            "value": 1,
+            "unit": "rolls",
+            "approximate": false,
+            "display": "last roll"
+          }
+        },
+        {
+          "id": "inv-dishwashing-liquid",
+          "name": "Oppvaskmiddel",
+          "status": "Lav",
+          "quantity": {
+            "value": 0.3,
+            "unit": "bottles",
+            "approximate": true,
+            "display": "approximately 30% of a bottle"
+          }
+        }
+      ],
+      "shopping": {
+        "boardList": "HANDLELISTE",
+        "nextTrip": {
+          "id": "shopping-card-next-handletur",
+          "name": "🛒 Neste handletur",
+          "state": "open",
+          "checklistName": "Varer som skal kjøpes",
+          "items": [
+            {
+              "id": "check-inv-dishwasher-tablets",
+              "sourceInventoryId": "inv-dishwasher-tablets",
+              "name": "Oppvasktabletter",
+              "priceNok": 89,
+              "quantityPurchased": {
+                "value": 30,
+                "unit": "tablets"
+              },
+              "checked": false
+            },
+            {
+              "id": "check-inv-hand-soap",
+              "sourceInventoryId": "inv-hand-soap",
+              "name": "Håndsåpe",
+              "priceNok": 49,
+              "quantityPurchased": {
+                "value": 1,
+                "unit": "bottles"
+              },
+              "checked": false
+            },
+            {
+              "id": "check-inv-toilet-paper",
+              "sourceInventoryId": "inv-toilet-paper",
+              "name": "Toalettpapir",
+              "priceNok": 99,
+              "quantityPurchased": {
+                "value": 12,
+                "unit": "rolls"
+              },
+              "checked": false
+            },
+            {
+              "id": "check-inv-trash-bags",
+              "sourceInventoryId": "inv-trash-bags",
+              "name": "Søppelposer",
+              "priceNok": 49,
+              "quantityPurchased": {
+                "value": 3,
+                "unit": "rolls"
+              },
+              "checked": false
+            }
+          ],
+          "checklistId": "checklist-shopping-items"
+        }
+      },
+      "pant": {
+        "vouchers": [
+          {
+            "id": "pant-voucher-20",
+            "amountNok": 20,
+            "status": "Tilgjengelig"
+          }
+        ]
+      },
+      "expenses": []
+    },
+    "afterPurchase": {
+      "capturedAt": "2026-10-14T18:00:00+02:00",
+      "phase": "after_purchase",
+      "chores": [
+        {
+          "id": "chore-kitchen",
+          "name": "Kjøkken",
+          "effortPoints": 5,
+          "frequencyDays": 7,
+          "assignedResidentId": "resident-nora",
+          "dueDate": "2026-10-14",
+          "status": "open"
+        },
+        {
+          "id": "chore-bathroom-1",
+          "name": "Bad 1",
+          "effortPoints": 4,
+          "frequencyDays": 7,
+          "assignedResidentId": "resident-oliver",
+          "dueDate": "2026-10-15",
+          "status": "open"
+        },
+        {
+          "id": "chore-bathroom-2",
+          "name": "Bad 2",
+          "effortPoints": 3,
+          "frequencyDays": 10,
+          "assignedResidentId": "resident-mia",
+          "dueDate": "2026-10-18",
+          "status": "open"
+        },
+        {
+          "id": "chore-wc",
+          "name": "WC",
+          "effortPoints": 3,
+          "frequencyDays": 7,
+          "assignedResidentId": "resident-leo",
+          "dueDate": "2026-10-16",
+          "status": "open"
+        },
+        {
+          "id": "chore-living-dining",
+          "name": "Stue + Spisestue",
+          "effortPoints": 2,
+          "frequencyDays": 14,
+          "assignedResidentId": "resident-amina",
+          "dueDate": "2026-10-20",
+          "status": "open"
+        },
+        {
+          "id": "chore-hallway",
+          "name": "Gang",
+          "effortPoints": 1,
+          "frequencyDays": 21,
+          "assignedResidentId": "resident-erik",
+          "dueDate": "2026-11-04",
+          "status": "open"
+        }
+      ],
+      "away": [
+        {
+          "residentId": "resident-oliver",
+          "status": "Borte",
+          "awayThroughDateInclusive": "2026-10-18"
+        }
+      ],
+      "homeIssues": [
+        {
+          "id": "issue-kitchen-sink-leak",
+          "name": "Lekkasjen under kjøkkenvasken",
+          "boardList": "HJEM",
+          "status": "Pågår",
+          "priority": "Haster",
+          "ownerResidentId": "resident-erik"
+        }
+      ],
+      "inventory": [
+        {
+          "id": "inv-dishwasher-tablets",
+          "name": "Oppvasktabletter",
+          "status": "OK",
+          "quantity": {
+            "value": 37,
+            "unit": "tablets",
+            "approximate": false,
+            "display": "37 tablets (7 + 30)"
+          }
+        },
+        {
+          "id": "inv-hand-soap",
+          "name": "Håndsåpe",
+          "status": "OK",
+          "quantity": {
+            "value": 1.1,
+            "unit": "bottles",
+            "approximate": true,
+            "display": "approximately 1.1 bottles (10% remaining + 1 new bottle)"
+          }
+        },
+        {
+          "id": "inv-toilet-paper",
+          "name": "Toalettpapir",
+          "status": "OK",
+          "quantity": {
+            "value": 15,
+            "unit": "rolls",
+            "approximate": false,
+            "display": "15 rolls (3 + 12)"
+          }
+        },
+        {
+          "id": "inv-trash-bags",
+          "name": "Søppelposer",
+          "status": "OK",
+          "quantity": {
+            "value": 4,
+            "unit": "rolls",
+            "approximate": false,
+            "display": "4 rolls (1 + 3)"
+          }
+        },
+        {
+          "id": "inv-dishwashing-liquid",
+          "name": "Oppvaskmiddel",
+          "status": "Lav",
+          "quantity": {
+            "value": 0.3,
+            "unit": "bottles",
+            "approximate": true,
+            "display": "approximately 30% of a bottle"
+          }
+        }
+      ],
+      "shopping": {
+        "boardList": "HANDLELISTE",
+        "completedTripId": "trip-2026-10-14",
+        "nextTrip": {
+          "id": "shopping-card-next-handletur",
+          "name": "🛒 Neste handletur",
+          "state": "open",
+          "checklistName": "Varer som skal kjøpes",
+          "items": [],
+          "checklistId": "checklist-shopping-items"
+        }
+      },
+      "pant": {
+        "vouchers": [
+          {
+            "id": "pant-voucher-20",
+            "amountNok": 20,
+            "status": "Brukt",
+            "usedForExpenseId": "expense-trip-2026-10-14"
+          }
+        ]
+      },
+      "expenses": [
+        {
+          "id": "expense-trip-2026-10-14",
+          "fromTripId": "trip-2026-10-14",
+          "boardList": "UTGIFTER",
+          "store": "REMA 1000",
+          "buyerResidentId": "resident-mia",
+          "purchasedAt": "2026-10-14T17:30:00+02:00",
+          "lineItems": [
+            {
+              "sourceInventoryId": "inv-dishwasher-tablets",
+              "name": "Oppvasktabletter",
+              "amountNok": 89,
+              "quantity": {
+                "value": 30,
+                "unit": "tablets"
+              }
+            },
+            {
+              "sourceInventoryId": "inv-hand-soap",
+              "name": "Håndsåpe",
+              "amountNok": 49,
+              "quantity": {
+                "value": 1,
+                "unit": "bottles"
+              }
+            },
+            {
+              "sourceInventoryId": "inv-toilet-paper",
+              "name": "Toalettpapir",
+              "amountNok": 99,
+              "quantity": {
+                "value": 12,
+                "unit": "rolls"
+              }
+            },
+            {
+              "sourceInventoryId": "inv-trash-bags",
+              "name": "Søppelposer",
+              "amountNok": 49,
+              "quantity": {
+                "value": 3,
+                "unit": "rolls"
+              }
+            }
+          ],
+          "totalNok": 286,
+          "pantUsedNok": 20,
+          "personallyPaidNok": 266,
+          "fieldLabels": {
+            "totalNok": "U · Totalbeløp",
+            "pantUsedNok": "U · Pant brukt",
+            "personallyPaidNok": "U · Personlig betalt"
+          },
+          "receipt": {
+            "kind": "synthetic",
+            "imageAsset": null,
+            "note": "Receipt image mockup not yet created; no real receipt attached."
+          },
+          "settlement": {
+            "defined": false,
+            "note": "No resident-to-resident debts or cost split are inferred."
+          }
+        }
+      ]
+    }
+  },
+  "illustrativeCleaningCases": {
+    "normalCompletion": {
+      "kind": "SYNTHETIC_RULE_EXAMPLE",
+      "choreId": "chore-kitchen",
+      "completedByResidentId": "resident-nora",
+      "completedOnDate": "2026-10-14",
+      "pointsAdded": 5,
+      "newCycle": {
+        "startDate": "2026-10-19",
+        "dueDate": "2026-10-21",
+        "dateRule": "D+5 / D+7"
+      },
+      "note": "Independent illustration; not applied to either shopping-focused snapshot."
+    },
+    "borteSkip": {
+      "kind": "SYNTHETIC_RULE_EXAMPLE_SEPARATE_CASE",
+      "completedChoreId": "chore-kitchen",
+      "nominalNextResidentId": "resident-oliver",
+      "awayResidentId": "resident-oliver",
+      "reassignedToResidentId": "resident-mia",
+      "nextNominalAfterReassignmentId": "resident-leo",
+      "rotationCreditsForSkippedResident": 1,
+      "skippedRotationsForSkippedResident": 1,
+      "note": "Assumes the illustrative order Nora → Oliver → Mia → Leo → Amina → Erik; not evidence of a live Trello run or a change to actual residents. Nominal next-person and actual card assignee are separate concepts."
+    }
+  },
+  "expectedDeterministicFacts": {
+    "beforePurchase": {
+      "choresDueTodayIds": [
+        "chore-kitchen"
+      ],
+      "overdueChoreIds": [],
+      "awayResidentIds": [
+        "resident-oliver"
+      ],
+      "urgentIssueIds": [
+        "issue-kitchen-sink-leak"
+      ],
+      "shoppingAttentionInventoryIds": [
+        "inv-dishwasher-tablets",
+        "inv-hand-soap",
+        "inv-toilet-paper",
+        "inv-trash-bags"
+      ]
+    },
+    "afterPurchase": {
+      "choresDueTodayIds": [
+        "chore-kitchen"
+      ],
+      "overdueChoreIds": [],
+      "awayResidentIds": [
+        "resident-oliver"
+      ],
+      "urgentIssueIds": [
+        "issue-kitchen-sink-leak"
+      ],
+      "shoppingAttentionInventoryIds": []
+    }
+  },
+  "shoppingWorkflow": {
+    "kind": "SYNTHETIC_TRANSITION_EXAMPLE",
+    "sequence": [
+      "Use the same evergreen 🛒 Neste handletur card and Varer som skal kjøpes checklist before and after purchase; add four source-linked items for Kjøp inventory (live Butler deduplication is best-effort)",
+      "Mia buys four items at REMA 1000 (illustrative completed purchase trip-2026-10-14); checked checklist items alone are not proof of payment or restocking",
+      "Apply the synthetic 20 NOK PANT voucher: Tilgjengelig → Brukt, linked to the expense",
+      "Create a separate expense record for the completed trip: 286 NOK total, 20 NOK PANT, 266 NOK personally paid",
+      "After simulated purchase verification, clear the four purchased checklist entries from the SAME evergreen card and update four purchased inventory statuses to OK; Oppvaskmiddel remains Lav",
+      "Keep the evergreen card/checklist for future purchases; derive shopping alerts from verified inventory status rather than checked-item state"
+    ],
+    "deduplicationKey": "sourceInventoryId",
+    "costAllocationImplemented": false,
+    "deduplicationNote": "Unique sourceInventoryId links are a fixture invariant. The separately verified live Butler label guard is best-effort, not an exactly-once transaction guarantee.",
+    "expenseIdentityNote": "The completedTripId/fromTripId is a separate historical purchase event key, NEVER the identity of the evergreen shopping card."
+  },
+  "expectedShoppingLifecycle": {
+    "evergreenCardId": "shopping-card-next-handletur",
+    "evergreenChecklistId": "checklist-shopping-items",
+    "completedPurchaseId": "trip-2026-10-14",
+    "purchasedInventoryIds": [
+      "inv-dishwasher-tablets",
+      "inv-hand-soap",
+      "inv-toilet-paper",
+      "inv-trash-bags"
+    ],
+    "remainingChecklistInventoryIdsAfter": [],
+    "unchangedLowInventoryIds": [
+      "inv-dishwashing-liquid"
+    ],
+    "expenseId": "expense-trip-2026-10-14",
+    "totalNok": 286,
+    "pantUsedNok": 20,
+    "personallyPaidNok": 266
+  }
+}
